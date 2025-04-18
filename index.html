@@ -1,84 +1,66 @@
-
-<!-- EM CONSTRUÇÃO: Esta é uma estrutura inicial do clone adaptado -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WUSDT - Stablecoin DeFi</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <style>
-    body {
-      background-color: #0a0a0a;
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
-    }
-    header {
-      padding: 20px;
-      background: #000;
-    }
-    header .navbar-brand img {
-      height: 40px;
-    }
-    section.hero {
-      padding: 100px 20px;
-      text-align: center;
-      background: linear-gradient(120deg, #0e1a1a, #001c1c);
-    }
-    section.hero h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-    .btn-main {
-      background: #00d084;
-      color: #000;
-      font-weight: bold;
-      padding: 12px 30px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .btn-main:hover {
-      background: #00f5a0;
-    }
-    footer {
-      background: #000;
-      padding: 40px;
-      text-align: center;
-      font-size: 0.9rem;
-      opacity: 0.7;
-    }
-  </style>
+  <meta name="description" content="Compre WUSDT com BNB na Binance Smart Chain! Criptomoeda com lastro de investimento, registrada no BscScan, e integração com MetaMask/Trust Wallet." />
+  <meta name="keywords" content="moeda WUSDT, comprar WUSDT BNB, criptomoeda WUSDT, lastro de investimento WUSDT" />
+  <title>WUSDT - Criptomoeda na BNB com Lastro de Investimento</title>
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.6.1/dist/web3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <header>
-    <div class="container d-flex justify-content-between align-items-center">
-      <a class="navbar-brand" href="#">
-        <img src="logo.png" alt="WUSDT">
-      </a>
-      <nav>
-        <a href="#" class="text-white mx-2">Início</a>
-        <a href="#" class="text-white mx-2">Tokenomics</a>
-        <a href="#" class="text-white mx-2">Roadmap</a>
-        <a href="#" class="text-white mx-2">Whitepaper</a>
-        <a href="#" class="text-white mx-2">Contato</a>
-      </nav>
+<body class="bg-gray-900 text-white font-sans">
+  <div id="particles-js" class="absolute inset-0 -z-10"></div>
+
+  <header class="text-center py-10">
+    <img src="img/wusdt-logo.png" alt="WUSDT Logo" class="mx-auto w-32 h-32 animate-pulse">
+    <h1 class="text-4xl md:text-5xl font-bold mt-4">WUSDT</h1>
+    <p class="text-lg mt-2">Criptomoeda com lastro de investimento na Binance Smart Chain</p>
+    <div class="mt-6 space-x-4">
+      <button onclick="buyWUSDT()" class="bg-yellow-500 hover:bg-yellow-600 px-6 py-2 rounded-2xl font-semibold transition-transform transform hover:scale-105">Comprar WUSDT</button>
+      <button onclick="addToMetaMask()" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-2xl">Adicionar ao MetaMask</button>
+    </div>
+    <div class="mt-4">
+      <a href="https://bscscan.com/token/0xAB6dB09EBA09af77C215133241939c6c8f250128" target="_blank" class="underline text-sm">0xAB6dB09EBA09af77C215133241939c6c8f250128</a>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>WUSDT</h1>
-      <p>A stablecoin pareada com USDT na blockchain BNB. Swap instantâneo, liquidez visível e integração com MetaMask.</p>
-      <div class="mt-4">
-        <a class="btn-main" href="https://pancakeswap.finance/swap?outputCurrency=0xAB6dB09EBA09af77C215133241939c6c8f250128" target="_blank">Comprar na PancakeSwap</a>
-        <a class="btn-main" href="https://metamask.app.link/send/token?address=0xAB6dB09EBA09af77C215133241939c6c8f250128&chain=56" target="_blank">Adicionar na MetaMask</a>
-      </div>
-    </div>
-  </section>
+  <main class="px-4 md:px-20">
+    <section id="sobre" class="my-20">
+      <h2 class="text-3xl font-bold mb-6 text-center">WUSDT: Lastro de Investimento e Liquidez na Rede BNB</h2>
+      <p class="text-lg leading-relaxed max-w-4xl mx-auto">
+        A WUSDT é uma criptomoeda inovadora na Binance Smart Chain (BSC), registrada no BscScan com o endereço 0xAB6dB09EBA09af77C215133241939c6c8f250128. Nosso projeto é sustentado por um lastro de investimento composto por reservas financeiras estratégicas e parcerias com líderes do mercado, garantindo liquidez e estabilidade mesmo em cenários de alta volatilidade. Lançada para democratizar o acesso às finanças descentralizadas, a WUSDT combina tecnologia blockchain de ponta com uma visão de longo prazo para o futuro dos investimentos. Nosso objetivo é expandir globalmente, integrando a WUSDT a novas redes e promovendo um ecossistema financeiro inclusivo. Com transações transparentes e verificáveis, a WUSDT é a escolha ideal para investidores que buscam segurança e inovação. Junte-se à revolução WUSDT hoje!
+      </p>
+    </section>
 
-  <footer>
-    <div>© 2025 Projeto WUSDT – Desenvolvido com suporte técnico especializado. Redes sociais em breve.</div>
+    <section id="como-comprar" class="my-20">
+      <h2 class="text-3xl font-bold mb-6 text-center">Como Comprar</h2>
+      <ol class="list-decimal space-y-4 max-w-3xl mx-auto text-lg">
+        <li>Conecte sua carteira (MetaMask ou Trust Wallet).</li>
+        <li>Insira a quantidade de BNB que deseja trocar.</li>
+        <li>Confirme a transação no pop-up da carteira.</li>
+        <li>Adicione a WUSDT à sua carteira clicando nos botões acima.</li>
+      </ol>
+    </section>
+
+    <section id="contato" class="my-20 text-center">
+      <h2 class="text-3xl font-bold mb-6">Contato</h2>
+      <p class="mb-4">Entre em contato conosco:</p>
+      <div class="flex flex-wrap justify-center space-x-4">
+        <a href="https://web.telegram.org/k/#@wusdti" target="_blank">Telegram</a>
+        <a href="https://x.com/" target="_blank">X (Twitter)</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center py-6 border-t border-gray-700">
+    <p>© 2025 WUSDT - Todos os direitos reservados.</p>
   </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
