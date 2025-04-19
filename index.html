@@ -1,4 +1,7 @@
+from pathlib import Path
 
+# Corrigir logo e botão "Compre com BNB" mantendo o layout original
+html_code_corrigido = """
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -58,27 +61,9 @@
       justify-content: center;
       gap: 8px;
     }
-    .sc-dhKdPU {
-      font-size: 1.5em;
-      color: #f5a623;
-      font-weight: bold;
-    }
-    .progress-bar-wrapper {
-      background-color: #333;
-      border-radius: 10px;
-      height: 10px;
-      margin: 10px 0;
-      overflow: hidden;
-    }
-    .progress-bar {
-      height: 100%;
-      background: linear-gradient(to right, #f5a623, #ffa500);
-      width: 69%;
-      transition: width 1s ease-in-out;
-    }
     .dropdown-toggle {
-      background-color: #333;
-      color: white;
+      background-color: transparent;
+      color: #f5a623;
       border: none;
       padding: 10px 20px;
       border-radius: 6px;
@@ -88,55 +73,11 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
+      font-weight: bold;
     }
     .dropdown-toggle img {
       width: 20px;
       height: auto;
-    }
-    .presale-item-inner {
-      margin-bottom: 15px;
-    }
-    .presale-item-inner label {
-      display: block;
-      margin-bottom: 5px;
-      color: #ccc;
-    }
-    .presale-item-inner input {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      border: none;
-      background-color: #333;
-      color: white;
-    }
-    .presale-item-btn,
-    .presale-item-btn2,
-    .metamask-btn {
-      background-color: #f5a623;
-      color: black;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-      margin: 5px;
-      transition: transform 0.2s;
-      display: inline-block;
-      text-align: center;
-      text-decoration: none;
-    }
-    .presale-item-btn2 {
-      background-color: #007bff;
-      color: white;
-    }
-    .metamask-btn {
-      background-color: #ff5722;
-      color: white;
-    }
-    .presale-item-btn:hover,
-    .presale-item-btn2:hover,
-    .metamask-btn:hover {
-      transform: scale(1.05);
     }
     @media (max-width: 600px) {
       .header {
@@ -165,177 +106,7 @@
       <div class="presale-card-counter">
         <i class="fas fa-fire"></i> COMPRE NA PRÉ-VENDA
       </div>
-      <h5 class="text-uppercase mt-2">🔥 A rodada final chegou!</h5>
-      <h5>Total arrecadado:</h5>
-      <div class="sc-dhKdPU">$1,382,577.77</div>
-      <div class="progress-bar-wrapper"><div class="progress-bar"></div></div>
-      <p class="mt-2">WUSDT 0,085 USD + 15% de bônus de Páscoa</p>
+      <p>WUSDT 0,085 USD + 15% de bônus de Páscoa</p>
       <div class="pay-with-content">
         <button class="dropdown-toggle">
-          <img src="https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafkreia45loqirzvazb52cbicifto2h7vur4qv6t4et2ombbpi5bua63zq" alt="BNB"> Compre com BNB
-        </button>
-      </div>
-      <form>
-        <div class="presale-item-inner">
-          <label>Token de pagamento (BNB)</label>
-          <input id="bnbInput" type="number" placeholder="0" />
-        </div>
-        <div class="presale-item-inner">
-          <label>Você receberá (WUSDT)</label>
-          <input id="wusdtOutput" type="number" disabled placeholder="0" />
-        </div>
-      </form>
-      <a class="presale-item-btn" href="https://pancakeswap.finance/swap?outputCurrency=0xAB6dB09EBA09af77C215133241939c6c8f250128" target="_blank">Compre Agora</a>
-      <button class="metamask-btn" onclick="addTokenToMetaMask()">Adicionar à MetaMask</button>
-    </div>
-  </div>
-
-  
-    <div class="text-center mt-10">
-      <h3 class="text-xl font-bold mb-4">Links Importantes</h3>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="https://bscscan.com/token/0xAB6dB09EBA09af77C215133241939c6c8f250128" target="_blank"><i class="fas fa-search mr-2"></i> class="px-6 py-2 bg-yellow-400 text-black rounded-full font-bold hover:bg-yellow-500 transition">Ver no BscScan</a>
-        <a href="https://poocoin.app/tokens/0xAB6dB09EBA09af77C215133241939c6c8f250128" target="_blank"><i class="fas fa-chart-line mr-2"></i> class="px-6 py-2 bg-green-500 text-white rounded-full font-bold hover:bg-green-600 transition">Poocoin</a>
-        <a href="https://web.telegram.org/k/#@wusdti" target="_blank"><i class="fab fa-telegram mr-2"></i> class="px-6 py-2 bg-blue-500 text-white rounded-full font-bold hover:bg-blue-600 transition">Telegram</a>
-        <a href="https://x.com/" target="_blank"><i class="fab fa-x-twitter mr-2"></i> class="px-6 py-2 bg-black text-white rounded-full font-bold hover:bg-gray-800 transition">X (Twitter)</a>
-      </div>
-    </div>
-
-    
-<div class="text-center mt-10">
-  <h3 class="text-xl font-bold mb-4">Siga a WUSDT</h3>
-  <div class="flex flex-wrap justify-center gap-4">
-    <a href="https://bscscan.com/token/0xAB6dB09EBA09af77C215133241939c6c8f250128" target="_blank" class="bg-yellow-500 text-black px-5 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-yellow-600 transition">
-      <i class="fas fa-search"></i> BscScan
-    </a>
-    <a href="https://poocoin.app/tokens/0xAB6dB09EBA09af77C215133241939c6c8f250128" target="_blank" class="bg-green-500 text-white px-5 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-green-600 transition">
-      <i class="fas fa-chart-line"></i> Poocoin
-    </a>
-    <a href="https://web.telegram.org/k/#@wusdti" target="_blank" class="bg-blue-500 text-white px-5 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-blue-600 transition">
-      <i class="fab fa-telegram-plane"></i> Telegram
-    </a>
-    <a href="https://x.com/" target="_blank" class="bg-black text-white px-5 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-gray-800 transition">
-      <i class="fab fa-x-twitter"></i> X (Twitter)
-    </a>
-  </div>
-</div>
-
-
-<section id="sobre" class="container mt-20">
-
-    <h2 class="text-2xl font-bold mb-4">WUSDT: Lastro de Investimento e Liquidez na Rede BNB</h2>
-<p>
-  A <strong>WUSDT</strong> é uma criptomoeda revolucionária desenvolvida na <strong>Binance Smart Chain (BSC)</strong>, com o propósito de transformar o acesso a soluções financeiras seguras, estáveis e transparentes. Registrada no BscScan sob o contrato <strong>0xAB6dB09EBA09af77C215133241939c6c8f250128</strong>, a WUSDT foi projetada para unir tecnologia de ponta com segurança institucional.
-</p>
-
-<p class="mt-4">
-  Nosso projeto é sustentado por um <strong>lastro de investimento sólido</strong>, estruturado a partir de reservas estratégicas e parcerias com instituições financeiras e líderes do mercado global. Esse ecossistema de suporte proporciona à WUSDT um diferencial competitivo em liquidez, estabilidade e escalabilidade — mesmo em cenários de volatilidade extrema.
-</p>
-
-<p class="mt-4">
-  Lançada com a missão de democratizar o acesso às finanças descentralizadas (<strong>DeFi</strong>), a WUSDT oferece um modelo acessível tanto para investidores iniciantes quanto para grandes players institucionais. Seus fundamentos técnicos, aliados a uma governança clara e transparente, fazem da WUSDT uma moeda digital moderna, segura e alinhada às demandas do mercado internacional.
-</p>
-
-<p class="mt-4">
-  Nossa visão é construir um futuro financeiro mais justo, descentralizado e inclusivo. Por isso, estamos em constante desenvolvimento e buscamos integrar a WUSDT a novas redes e protocolos, oferecendo interoperabilidade e maior acessibilidade aos nossos usuários. A cada fase do projeto, reafirmamos nosso compromisso com inovação, confiabilidade e crescimento sustentável.
-</p>
-
-<p class="mt-4">
-  Com todas as transações verificáveis publicamente, auditorias constantes e um código auditado, a WUSDT proporciona a <strong>confiança que o investidor moderno exige</strong>. Mais do que uma criptomoeda, a WUSDT é um projeto em expansão que representa uma oportunidade única de fazer parte da nova era do dinheiro digital.
-</p>
-
-<p class="mt-4 font-semibold text-yellow-400">
-  Junte-se à revolução WUSDT e faça parte do futuro das finanças agora mesmo!
-</p>
-
-    
-    <p>
-      A WUSDT é uma criptomoeda inovadora na Binance Smart Chain (BSC), registrada no BscScan com o endereço
-      <strong>0xAB6dB09EBA09af77C215133241939c6c8f250128</strong>. Nosso projeto é sustentado por um lastro de investimento
-      composto por reservas financeiras estratégicas e parcerias com líderes do mercado, garantindo liquidez e estabilidade
-      mesmo em cenários de alta volatilidade.
-    </p>
-    <p class="mt-4">
-      Lançada para democratizar o acesso às finanças descentralizadas, a WUSDT combina tecnologia blockchain de ponta com uma
-      visão de longo prazo para o futuro dos investimentos. Nosso objetivo é expandir globalmente, integrando a WUSDT a novas
-      redes e promovendo um ecossistema financeiro inclusivo.
-    </p>
-    <p class="mt-4">
-      Com transações transparentes e verificáveis, a WUSDT é a escolha ideal para investidores que buscam segurança e inovação.
-      Junte-se à revolução WUSDT hoje!
-    </p>
-    
-  </section>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const bnbInput = document.getElementById('bnbInput');
-      const wusdtOutput = document.getElementById('wusdtOutput');
-      const rate = 300;
-      bnbInput.addEventListener('input', () => {
-        const bnb = parseFloat(bnbInput.value) || 0;
-        wusdtOutput.value = (bnb * rate).toFixed(2);
-      });
-    });
-
-    async function addTokenToMetaMask() {
-      if (typeof window.ethereum === 'undefined') {
-        alert('MetaMask não está instalada!');
-        return;
-      }
-
-      try {
-        await window.ethereum.request({
-          method: 'wallet_switchEthereumChain',
-          params: [{ chainId: '0x38' }],
-        });
-      } catch (switchError) {
-        if (switchError.code === 4902) {
-          try {
-            await window.ethereum.request({
-              method: 'wallet_addEthereumChain',
-              params: [{
-                chainId: '0x38',
-                chainName: 'BNB Smart Chain',
-                nativeCurrency: { name: 'BNB', symbol: 'BNB', decimals: 18 },
-                rpcUrls: ['https://bsc-dataseed.binance.org/'],
-                blockExplorerUrls: ['https://bscscan.com']
-              }]
-            });
-          } catch (addError) {
-            alert('Erro ao adicionar a rede BSC: ' + addError.message);
-            return;
-          }
-        } else {
-          alert('Erro ao trocar de rede: ' + switchError.message);
-          return;
-        }
-      }
-
-      try {
-        const wasAdded = await window.ethereum.request({
-          method: 'wallet_watchAsset',
-          params: {
-            type: 'ERC20',
-            options: {
-              address: '0xAB6dB09EBA09af77C215133241939c6c8f250128',
-              symbol: 'WUSDT',
-              decimals: 18,
-              image: 'https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeibv36dhcyqirmaz6gqqketbuyyulcpsag7xdrtzlioq2qnwebuwgm'
-            }
-          }
-        });
-
-        if (wasAdded) {
-          alert('Token WUSDT adicionado com sucesso!');
-        } else {
-          alert('O token não foi adicionado.');
-        }
-      } catch (error) {
-        console.error(error);
-        alert('Erro ao adicionar o token ao MetaMask.');
-      }
-    }
-  </script>
-</body>
-</html>
+          <img src="https://lavender-quiet-crawdad-359.mypin
