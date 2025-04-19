@@ -2,214 +2,102 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WUSDT - Sobre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WUSDT - Pré-venda</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.7.4/dist/web3.min.js"></script>
   <style>
-    body {
-      background-color: #0f1624;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 40px;
-      margin: 0;
+    .dropdown-toggle { 
+      width: 100%; 
+      padding: 10px; 
+      display: flex; 
+      align-items: center; 
+      gap: 8px; 
+      background: #f0f0f0; 
+      border: none; 
+      cursor: pointer; 
     }
-
-    .header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 30px;
-    }
-
-    .header-images {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .header-images img {
-      max-width: 120px;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .bnb-connection {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 20px 0;
-    }
-
-    .bnb-connection img {
-      width: 60px;
-      height: 60px;
-    }
-
-    .bnb-connection p {
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #f5a623;
-    }
-
-    .nav-link {
-      margin-top: 20px;
-    }
-
-    .nav-link a {
-      color: #0af;
-      text-decoration: none;
-      font-size: 1.2em;
-      padding: 10px 20px;
-      border: 2px solid #0af;
-      border-radius: 6px;
-      transition: background-color 0.3s;
-    }
-
-    .nav-link a:hover {
-      background-color: #0af;
-      color: #0f1624;
-    }
-
-    .history-section {
-      max-width: 800px;
-      margin: 40px auto;
-      text-align: left;
-    }
-
-    .history-section h2 {
-      font-size: 2em;
-      color: #f5a623;
-      margin-bottom: 20px;
-    }
-
-    .history-section p {
-      font-size: 1.1em;
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
-
-    .ecosystem {
-      margin-top: 60px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-
-    .icone-ecossistema {
-      text-align: center;
-      width: 120px;
-    }
-
-    .icone-ecossistema img {
-      width: 72px;
-      height: 72px;
-      object-fit: contain;
-    }
-
-    a {
-      color: #0af;
-      text-decoration: none;
-      font-size: 1.1em;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      .header-images img {
-        max-width: 80px;
-      }
-
-      .bnb-connection img {
-        width: 40px;
-        height: 40px;
-      }
-
-      .bnb-connection p {
-        font-size: 1em;
-      }
-
-      .history-section {
-        padding: 0 15px;
-      }
-
-      .history-section h2 {
-        font-size: 1.5em;
-      }
-
-      .history-section p {
-        font-size: 1em;
-      }
-
-      .icone-ecossistema {
-        width: 100px;
-      }
-
-      .icone-ecossistema img {
-        width: 60px;
-        height: 60px;
-      }
-    }
+    .pay-with-content { display: flex; justify-content: space-between; }
+    .pay-with-content-left { flex: 1; }
   </style>
 </head>
 <body>
-  <div class="header">
-    <div class="header-images">
-      <img src="https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeib76iz47qsgw5ifddpg62sthxbnl2uztgfi6tyhgm4zodugyuwis4/logo.png" alt="WUSDT Logo" />
-      <img src="https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeib76iz47qsgw5ifddpg62sthxbnl2uztgfi6tyhgm4zodugyuwis4/rodape.png" alt="WUSDT Footer" />
-    </div>
-    <div class="bnb-connection">
-      <img src="https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeib76iz47qsgw5ifddpg62sthxbnl2uztgfi6tyhgm4zodugyuwis4/logo.png" alt="WUSDT Logo" />
-      <img src="https://bin.bnbstatic.com/static/images/common/icon-bnb2.svg" alt="BNB Logo" />
-      <p>WUSDT na Rede BNB</p>
-    </div>
-    <div class="nav-link">
-      <a href="index.html">Voltar</a>
+  <div class="mb-20 container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="mb-20 text-center">
+          <div class="presale-card">
+            <div class="pay-with-content">
+              <div class="pay-with-content-left">
+                <button class="dropdown-toggle" id="buyWithETH">
+                  <img src="/src/assets/images/token/eth.png" alt="ícone"> 
+                  <span>Compre com ETH</span>
+                </button>
+              </div>
+              <div class="pay-with-content-right">
+                <iframe src="https://www.dextools.io/app/en/bnb/pair-explorer/0xAB6dB09EBA09af77C215133241939c6c8f250128" 
+                        width="300" height="200" frameborder="0" 
+                        style="display: inline-block;"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="history-section">
-    <h2>História da WUSDT</h2>
-    <p>A WUSDT foi criada com o objetivo de trazer estabilidade e confiança ao mercado de criptomoedas, sendo uma moeda com lastro que opera na Binance Smart Chain (BNB Chain). Lançada oficialmente em 2024, a WUSDT visa oferecer uma alternativa segura para investidores que buscam uma moeda digital com valor atrelado a ativos reais.</p>
-    <p>Nosso projeto começou com uma visão de democratizar o acesso a investimentos seguros no universo cripto. Durante a fase de pré-venda, arrecadamos mais de 1,38 milhão de dólares, demonstrando o apoio massivo da comunidade. A WUSDT é suportada por uma infraestrutura robusta e parcerias com plataformas como MetaMask, Trust Wallet e Binance.</p>
-    <p>Estamos comprometidos em expandir nosso ecossistema, integrando novas funcionalidades e garantindo transparência em todas as nossas operações. Junte-se a nós nesta jornada para transformar o futuro das finanças digitais!</p>
-  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const buyWithETHButton = document.getElementById('buyWithETH');
+      buyWithETHButton.addEventListener('click', async function() {
+        if (typeof window.ethereum !== 'undefined') {
+          try {
+            // Conectar à MetaMask
+            await window.ethereum.request({ method: 'eth_requestAccounts' });
+            const web3 = new Web3(window.ethereum);
+            const accounts = await web3.eth.getAccounts();
+            const userAddress = accounts[0];
 
-  <p style="margin-top: 40px;">
-    <a href="https://bscscan.com/token/0xAB6dB09EBA09af77C215133241939c6c8f250128" target="_blank">
-      Ver no BscScan
-    </a>
-  </p>
+            // Configurar a transação para comprar WUSDT
+            const contractAddress = '0xAB6dB09EBA09af77C215133241939c6c8f250128'; // Endereço WUSDT
+            const amount = web3.utils.toWei('1', 'ether'); // Exemplo: 1 ETH
+            const routerAddress = '0x10ED43C718714eb63d5aA57B78B54704E256024E'; // PancakeSwap Router (BNB Chain)
 
-  <div class="ecosystem">
-    <div class="icone-ecossistema">
-      <img src="https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeib76iz47qsgw5ifddpg62sthxbnl2uztgfi6tyhgm4zodugyuwis4/logo.png" alt="WUSDT Logo" />
-      <p>WUSDT</p>
-    </div>
-    <div class="icone-ecossistema">
-      <img src="https://wusdtp.github.io/wusdt-coin/icons/metamask.png" alt="MetaMask" />
-      <p>MetaMask</p>
-    </div>
-    <div class="icone-ecossistema">
-      <img src="https://wusdtp.github.io/wusdt-coin/icons/binance.png" alt="Binance" />
-      <p>Binance</p>
-    </div>
-    <div class="icone-ecossistema">
-      <img src="https://wusdtp.github.io/wusdt-coin/icons/bluewallet.png" alt="Trust Wallet Azul" />
-      <p>Trust Azul</p>
-    </div>
-    <div class="icone-ecossistema">
-      <img src="https://wusdtp.github.io/wusdt-coin/icons/greenwallet.png" alt="Trust Wallet Verde" />
-      <p>Trust Verde</p>
-    </div>
-    <div class="icone-ecossistema">
-      <img src="https://wusdtp.github.io/wusdt-coin/dextools.jpg" alt="DEXTools" />
-      <p>DEXTools</p>
-    </div>
-  </div>
+            const data = web3.eth.abi.encodeFunctionCall({
+              name: 'swapExactETHForTokens',
+              type: 'function',
+              inputs: [{
+                type: 'uint256',
+                name: 'amountOutMin'
+              }, {
+                type: 'address[]',
+                name: 'path'
+              }, {
+                type: 'address',
+                name: 'to'
+              }, {
+                type: 'uint256',
+                name: 'deadline'
+              }]
+            }, ['0', ['0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', contractAddress], userAddress, Math.floor(Date.now() / 1000) + 60 * 20]);
+
+            // Enviar transação
+            await web3.eth.sendTransaction({
+              from: userAddress,
+              to: routerAddress,
+              value: amount,
+              data: data
+            });
+            alert('Compra realizada com sucesso!');
+          } catch (error) {
+            console.error('Erro na transação:', error);
+            alert('Falha ao realizar a compra.');
+          }
+        } else {
+          alert('MetaMask não detectada. Instale a MetaMask para continuar.');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
