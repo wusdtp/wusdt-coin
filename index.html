@@ -1,3 +1,7 @@
+from pathlib import Path
+
+# HTML com correções aplicadas:
+html_code = """
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -14,57 +18,153 @@
       padding: 40px;
     }
     .container { max-width: 1200px; margin: 0 auto; }
-    .header { display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #1c2a3b; border-radius: 12px; margin-bottom: 20px; }
-    .header-images img { width: 100px; height: auto; margin-right: 10px; }
-    .bnb-connection { display: flex; align-items: center; gap: 10px; }
-    .bnb-connection img { width: 30px; height: auto; }
-    .nav-link a { color: #f5a623; text-decoration: none; font-weight: bold; }
-    .nav-link a:hover { text-decoration: underline; }
-    .presale-card { background-color: #1c2a3b; padding: 20px; border-radius: 12px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.05); max-width: 600px; margin: 0 auto; }
-    .presale-card-header { height: 20px; background-color: #f5a623; border-radius: 12px 12px 0 0; }
-    .presale-card img { max-width: 50%; height: auto; margin-bottom: 10px; }
-    .presale-card-counter { font-size: 1.2em; color: #ffa500; margin: 10px 0; display: flex; align-items: center; justify-content: center; gap: 8px; }
-    .sc-dhKdPU { font-size: 1.5em; color: #f5a623; font-weight: bold; }
-    .progress-bar-wrapper { background-color: #333; border-radius: 10px; height: 10px; margin: 10px 0; overflow: hidden; }
-    .progress-bar { height: 100%; background: linear-gradient(to right, #f5a623, #ffa500); width: 69%; transition: width 1s ease-in-out; }
-    .dropdown-toggle { background-color: #333; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; }
-    .dropdown-toggle img { width: 20px; height: auto; }
-    .presale-item-inner { margin-bottom: 15px; }
-    .presale-item-inner label { display: block; margin-bottom: 5px; color: #ccc; }
-    .presale-item-inner input { width: 100%; padding: 10px; border-radius: 6px; border: none; background-color: #333; color: white; }
-    .presale-item-btn, .presale-item-btn2, .metamask-btn {
-      background-color: #f5a623; color: black; border: none; padding: 12px 25px; border-radius: 6px;
-      cursor: pointer; font-weight: bold; margin: 5px; transition: transform 0.2s;
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #1c2a3b;
+      border-radius: 12px;
+      margin-bottom: 20px;
     }
-    .presale-item-btn2 { background-color: #007bff; color: white; }
-    .metamask-btn { background-color: #ff5722; color: white; }
-    .presale-item-btn:hover, .presale-item-btn2:hover, .metamask-btn:hover { transform: scale(1.05); }
+    .header-images img {
+      width: 100px;
+      height: auto;
+    }
+    .nav-link a {
+      color: #f5a623;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .nav-link a:hover {
+      text-decoration: underline;
+    }
+    .presale-card {
+      background-color: #1c2a3b;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .presale-card-header {
+      height: 20px;
+      background-color: #f5a623;
+      border-radius: 12px 12px 0 0;
+    }
+    .presale-card-counter {
+      font-size: 1.2em;
+      color: #ffa500;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .sc-dhKdPU {
+      font-size: 1.5em;
+      color: #f5a623;
+      font-weight: bold;
+    }
+    .progress-bar-wrapper {
+      background-color: #333;
+      border-radius: 10px;
+      height: 10px;
+      margin: 10px 0;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(to right, #f5a623, #ffa500);
+      width: 69%;
+      transition: width 1s ease-in-out;
+    }
+    .dropdown-toggle {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .dropdown-toggle img {
+      width: 20px;
+      height: auto;
+    }
+    .presale-item-inner {
+      margin-bottom: 15px;
+    }
+    .presale-item-inner label {
+      display: block;
+      margin-bottom: 5px;
+      color: #ccc;
+    }
+    .presale-item-inner input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      background-color: #333;
+      color: white;
+    }
+    .presale-item-btn,
+    .presale-item-btn2,
+    .metamask-btn {
+      background-color: #f5a623;
+      color: black;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 5px;
+      transition: transform 0.2s;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+    }
+    .presale-item-btn2 {
+      background-color: #007bff;
+      color: white;
+    }
+    .metamask-btn {
+      background-color: #ff5722;
+      color: white;
+    }
+    .presale-item-btn:hover,
+    .presale-item-btn2:hover,
+    .metamask-btn:hover {
+      transform: scale(1.05);
+    }
     @media (max-width: 600px) {
-      .header { flex-direction: column; text-align: center; }
-      .presale-card { padding: 15px; }
+      .header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .presale-card {
+        padding: 15px;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Cabeçalho -->
   <div class="header">
     <div class="header-images">
-      <img src="https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeib76iz47qsgw5ifddpg62sthxbnl2uztgfi6tyhgm4zodugyuwis4/logo.png" alt="WUSDT Logo">
-    </div>
-    <div class="bnb-connection">
-      <img src="https://bin.bnbstatic.com/static/images/common/icon-bnb2.svg" alt="BNB Logo" />
-      <p>WUSDT na Rede BNB</p>
+      <img src="https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeib76iz47qsgw5ifddpg62sthxbnl2uztgfi6tyhgm4zodugyuwis4/logo.png" alt="WUSDT Logo" />
     </div>
     <div class="nav-link">
       <a href="#sobre">Sobre</a>
     </div>
   </div>
 
-  <!-- Card de Pré-venda -->
   <div class="container">
     <div class="presale-card">
       <div class="presale-card-header"></div>
-      <img src="https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeib76iz47qsgw5ifddpg62sthxbnl2uztgfi6tyhgm4zodugyuwis4/logo.png" alt="Logo WUSDT" />
       <div class="presale-card-counter">
         <i class="fas fa-fire"></i> COMPRE NA PRÉ-VENDA
       </div>
@@ -88,39 +188,24 @@
           <input id="wusdtOutput" type="number" disabled placeholder="0" />
         </div>
       </form>
-      <button class="presale-item-btn">Compre Agora</button>
-      <button class="presale-item-btn2">Minha referência</button>
+      <a class="presale-item-btn" href="https://pancakeswap.finance/swap?outputCurrency=0xAB6dB09EBA09af77C215133241939c6c8f250128" target="_blank">Compre Agora</a>
       <button class="metamask-btn" onclick="addTokenToMetaMask()">Adicionar à MetaMask</button>
     </div>
   </div>
 
-  <!-- Sobre o Projeto -->
   <section id="sobre" class="container mt-20">
     <h2 class="text-2xl font-bold mb-4">WUSDT: Lastro de Investimento e Liquidez na Rede BNB</h2>
     <p>
       A WUSDT é uma criptomoeda inovadora na Binance Smart Chain (BSC), registrada no BscScan com o endereço
-      <strong>0xAB6dB09EBA09af77C215133241939c6c8f250128</strong>. Nosso projeto é sustentado por um lastro de investimento
-      composto por reservas financeiras estratégicas e parcerias com líderes do mercado, garantindo liquidez e estabilidade
-      mesmo em cenários de alta volatilidade.
-    </p>
-    <p class="mt-2">
-      Lançada para democratizar o acesso às finanças descentralizadas, a WUSDT combina tecnologia blockchain de ponta com uma
-      visão de longo prazo para o futuro dos investimentos. Nosso objetivo é expandir globalmente, integrando a WUSDT a novas
-      redes e promovendo um ecossistema financeiro inclusivo.
-    </p>
-    <p class="mt-2">
-      Com transações transparentes e verificáveis, a WUSDT é a escolha ideal para investidores que buscam segurança e inovação.
-      Junte-se à revolução WUSDT hoje!
+      <strong>0xAB6dB09EBA09af77C215133241939c6c8f250128</strong>.
     </p>
   </section>
 
-  <!-- Script de conversão e MetaMask -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const bnbInput = document.getElementById('bnbInput');
       const wusdtOutput = document.getElementById('wusdtOutput');
-      const rate = 300; // 1 BNB = 300 WUSDT
-
+      const rate = 300;
       bnbInput.addEventListener('input', () => {
         const bnb = parseFloat(bnbInput.value) || 0;
         wusdtOutput.value = (bnb * rate).toFixed(2);
@@ -128,8 +213,41 @@
     });
 
     async function addTokenToMetaMask() {
+      if (typeof window.ethereum === 'undefined') {
+        alert('MetaMask não está instalada!');
+        return;
+      }
+
       try {
         await window.ethereum.request({
+          method: 'wallet_switchEthereumChain',
+          params: [{ chainId: '0x38' }],
+        });
+      } catch (switchError) {
+        if (switchError.code === 4902) {
+          try {
+            await window.ethereum.request({
+              method: 'wallet_addEthereumChain',
+              params: [{
+                chainId: '0x38',
+                chainName: 'BNB Smart Chain',
+                nativeCurrency: { name: 'BNB', symbol: 'BNB', decimals: 18 },
+                rpcUrls: ['https://bsc-dataseed.binance.org/'],
+                blockExplorerUrls: ['https://bscscan.com']
+              }]
+            });
+          } catch (addError) {
+            alert('Erro ao adicionar a rede BSC: ' + addError.message);
+            return;
+          }
+        } else {
+          alert('Erro ao trocar de rede: ' + switchError.message);
+          return;
+        }
+      }
+
+      try {
+        const wasAdded = await window.ethereum.request({
           method: 'wallet_watchAsset',
           params: {
             type: 'ERC20',
@@ -137,16 +255,28 @@
               address: '0xAB6dB09EBA09af77C215133241939c6c8f250128',
               symbol: 'WUSDT',
               decimals: 18,
-              image: 'https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeib76iz47qsgw5ifddpg62sthxbnl2uztgfi6tyhgm4zodugyuwis4/logo.png',
-            },
-          },
+              image: 'https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeib76iz47qsgw5ifddpg62sthxbnl2uztgfi6tyhgm4zodugyuwis4/logo.png'
+            }
+          }
         });
-        alert('Token WUSDT adicionado à MetaMask!');
+
+        if (wasAdded) {
+          alert('Token WUSDT adicionado com sucesso!');
+        } else {
+          alert('O token não foi adicionado.');
+        }
       } catch (error) {
-        console.error('Erro ao adicionar token:', error);
-        alert('Erro ao adicionar o token à MetaMask.');
+        console.error(error);
+        alert('Erro ao adicionar o token ao MetaMask.');
       }
     }
   </script>
 </body>
 </html>
+"""
+
+# Salvar o arquivo HTML
+file_path = Path("/mnt/data/wusdt_presale.html")
+file_path.write_text(html_code, encoding="utf-8")
+
+file_path.name
