@@ -1,13 +1,9 @@
-from pathlib import Path
-
-# Versão com o rodapé (footer) contendo a logo igual ao topo
-html_com_rodape_logo = """
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WUSDT - Criptomoeda com Lastro</title>
+  <title>WUSDT - Pré-venda Oficial</title>
   <style>
     body {
       background-color: #0f1624;
@@ -57,37 +53,122 @@ html_com_rodape_logo = """
       color: #f5a623;
     }
 
-    .buttons {
-      margin: 40px 0;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
+    .presale-card {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #1c2a3b;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      text-align: center;
     }
 
-    .buttons button {
-      padding: 18px 30px;
-      font-size: 18px;
+    .presale-card-header {
+      height: 20px;
+    }
+
+    .presale-card img {
+      max-width: 50%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .presale-card-counter {
+      font-size: 1.2em;
+      margin: 10px 0;
+      color: #ffa500;
+    }
+
+    .presale-card-body {
+      margin-top: 20px;
+    }
+
+    .presale-item {
+      margin: 20px 0;
+    }
+
+    .presale-item-inner {
+      margin-bottom: 15px;
+    }
+
+    .presale-item-inner label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 1em;
+      color: #ccc;
+    }
+
+    .presale-item-inner input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
       border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: transform 0.2s, background-color 0.2s;
+      background-color: #333;
+      color: white;
     }
 
-    .buttons button:hover {
+    .presale-item-btn,
+    .presale-item-btn2 {
+      background-color: #f5a623;
+      border: none;
+      color: black;
+      padding: 12px 25px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 5px;
+      transition: transform 0.2s;
+    }
+
+    .presale-item-btn:hover,
+    .presale-item-btn2:hover {
       transform: scale(1.05);
     }
 
-    .comprar {
-      background-color: #f5a623;
-      color: black;
-      font-weight: bold;
-    }
-
-    .metamask {
+    .presale-item-btn2 {
       background-color: #007bff;
       color: white;
-      font-weight: bold;
+    }
+
+    .balance-info {
+      margin: 10px 0;
+    }
+
+    .dropdown-toggle {
+      background-color: #333;
+      border: none;
+      color: white;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dropdown-toggle img {
+      width: 20px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    .pay-with-content {
+      margin: 20px 0;
+    }
+
+    .pay-with-content-left {
+      margin-bottom: 10px;
+    }
+
+    .sc-imWZod, .sc-jXbVAB, .sc-dhKdPU {
+      display: inline-block;
+      margin: 5px 0;
+    }
+
+    .sc-dhKdPU {
+      font-size: 1.5em;
+      color: #f5a623;
     }
 
     .ecosystem {
@@ -119,17 +200,6 @@ html_com_rodape_logo = """
       text-decoration: underline;
     }
 
-    .footer {
-      margin-top: 60px;
-      padding-top: 30px;
-      border-top: 1px solid #333;
-    }
-
-    .footer img {
-      max-width: 140px;
-      margin: 0 auto;
-    }
-
     @media (max-width: 600px) {
       .header-images img {
         max-width: 80px;
@@ -144,9 +214,14 @@ html_com_rodape_logo = """
         font-size: 1em;
       }
 
-      .buttons button {
-        padding: 12px 20px;
-        font-size: 16px;
+      .presale-card {
+        padding: 15px;
+      }
+
+      .presale-item-btn,
+      .presale-item-btn2 {
+        padding: 10px 20px;
+        font-size: 0.9em;
       }
 
       .icone-ecossistema {
@@ -173,9 +248,56 @@ html_com_rodape_logo = """
     </div>
   </div>
 
-  <div class="buttons">
-    <button class="comprar" onclick="window.open('https://pancakeswap.finance/swap?outputCurrency=0xAB6dB09EBA09af77C215133241939c6c8f250128', '_blank')">Comprar WUSDT</button>
-    <button class="metamask" onclick="addTokenToMetaMask()">Adicionar ao MetaMask</button>
+  <div class="presale-card">
+    <div class="presale-card-header"></div>
+    <img src="https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeib76iz47qsgw5ifddpg62sthxbnl2uztgfi6tyhgm4zodugyuwis4/logo.png" alt="Logo WUSDT">
+    <div class="presale-card-counter">🦊 COMPRE NA PRÉ-VENDA</div>
+    <h5 class="ff-outfit fw-600 text-white text-uppercase mt-2">🔥 A rodada final chegou!</h5>
+    <div class="mt-2">
+      <h5>Total arrecadado:</h5>
+      <div class="sc-imWZod NeGIA">
+        <div class="sc-jXbVAB ffgnBl"></div>
+        <div class="sc-dhKdPU fewDmR">1.381.540,15</div>
+      </div>
+    </div>
+
+    <div class="presale-card-body">
+      <p>WUSDT 0,085 USD + 15% de bônus de lançamento</p>
+
+      <div class="balance-info mb-2">
+        <h6>Meu saldo:</h6>
+        <p><strong>0</strong> BNB</p>
+      </div>
+
+      <div class="pay-with-content">
+        <div class="pay-with-content-left">
+          <button class="dropdown-toggle">
+            <img src="https://cryptologos.cc/logos/bnb-bnb-logo.png" alt="ícone">BNB
+          </button>
+        </div>
+        <div class="pay-with-content-left" style="margin-top:10px;">
+          <button class="dropdown-toggle">
+            <img src="https://cryptologos.cc/logos/bnb-bnb-logo.png" alt="ícone">Compre com BNB
+          </button>
+        </div>
+      </div>
+
+      <form action="/" method="post">
+        <div class="presale-item">
+          <div class="presale-item-inner">
+            <label>Token de pagamento (BNB)</label>
+            <input type="number" placeholder="0" value="0">
+          </div>
+          <div class="presale-item-inner">
+            <label>Obtenha WUSDT</label>
+            <input type="number" placeholder="0" disabled value="0">
+          </div>
+        </div>
+      </form>
+
+      <button class="presale-item-btn">Compre Agora</button>
+      <button class="presale-item-btn2" onclick="addTokenToMetaMask()">Adicionar ao MetaMask</button>
+    </div>
   </div>
 
   <p style="margin-top: 40px;">
@@ -209,10 +331,6 @@ html_com_rodape_logo = """
       <img src="https://wusdtp.github.io/wusdt-coin/dextools.jpg" alt="DEXTools" />
       <p>DEXTools</p>
     </div>
-  </div>
-
-  <div class="footer">
-    <img src="https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeib76iz47qsgw5ifddpg62sthxbnl2uztgfi6tyhgm4zodugyuwis4/logo.png" alt="WUSDT Logo Rodapé" />
   </div>
 
   <script>
@@ -254,10 +372,3 @@ html_com_rodape_logo = """
   </script>
 </body>
 </html>
-"""
-
-# Salvar HTML com rodapé incluindo a logo
-path_footer = Path("/mnt/data/wusdt-site-com-rodape.html")
-path_footer.write_text(html_com_rodape_logo, encoding="utf-8")
-
-path_footer.name
