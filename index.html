@@ -5,99 +5,353 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WUSDT - Pré-venda</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/web3@1.7.4/dist/web3.min.js"></script>
   <style>
-    .dropdown-toggle { 
-      width: 100%; 
-      padding: 10px; 
-      display: flex; 
-      align-items: center; 
-      gap: 8px; 
-      background: #f0f0f0; 
-      border: none; 
-      cursor: pointer; 
+    body {
+      background-color: #0f1624;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
     }
-    .pay-with-content { display: flex; justify-content: space-between; }
-    .pay-with-content-left { flex: 1; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #1c2a3b;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .header-images img {
+      width: 100px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    .bnb-connection {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .bnb-connection img {
+      width: 30px;
+      height: auto;
+    }
+
+    .nav-link a {
+      color: #f5a623;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-link a:hover {
+      text-decoration: underline;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .mb-20 {
+      margin-bottom: 20px;
+    }
+
+    .presale-card {
+      background-color: #1c2a3b;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .presale-card-header {
+      height: 20px;
+      background-color: #f5a623;
+      border-radius: 12px 12px 0 0;
+    }
+
+    .presale-card img {
+      max-width: 50%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .presale-card-counter {
+      font-size: 1.2em;
+      color: #ffa500;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .presale-card-counter i {
+      font-size: 1.5em;
+    }
+
+    .ff-outfit {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .fw-600 {
+      font-weight: 600;
+    }
+
+    .text-white {
+      color: white;
+    }
+
+    .text-uppercase {
+      text-transform: uppercase;
+    }
+
+    .mt-2 {
+      margin-top: 0.5rem;
+    }
+
+    .sc-imWZod {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sc-dhKdPU {
+      font-size: 1.5em;
+      color: #f5a623;
+      font-weight: bold;
+    }
+
+    .progress-bar-wrapper {
+      background-color: #333;
+      border-radius: 10px;
+      height: 10px;
+      margin: 10px 0;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(to right, #f5a623, #ffa500);
+      width: 69%;
+      transition: width 1s ease-in-out;
+    }
+
+    .presale-card-body {
+      margin-top: 20px;
+    }
+
+    .balance-info {
+      margin-bottom: 10px;
+    }
+
+    .pay-with-content {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+
+    .dropdown-toggle {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .dropdown-toggle img {
+      width: 20px;
+      height: auto;
+    }
+
+    .presale-item-inner {
+      margin-bottom: 15px;
+    }
+
+    .presale-item-inner label {
+      display: block;
+      margin-bottom: 5px;
+      color: #ccc;
+    }
+
+    .presale-item-inner input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      background-color: #333;
+      color: white;
+    }
+
+    .presale-item-btn, .presale-item-btn2, .metamask-btn {
+      background-color: #f5a623;
+      color: black;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 5px;
+      transition: transform 0.2s;
+    }
+
+    .presale-item-btn:hover, .presale-item-btn2:hover, .metamask-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .presale-item-btn2 {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .metamask-btn {
+      background-color: #ff5722;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      .header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .presale-card {
+        padding: 15px;
+      }
+
+      .dropdown-toggle {
+        padding: 8px 15px;
+        font-size: 0.9em;
+      }
+
+      .presale-item-btn, .presale-item-btn2, .metamask-btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Cabeçalho com Logos e Conexão BNB -->
+  <div class="header">
+    <div class="header-images">
+      <img src="https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeib76iz47qsgw5ifddpg62sthxbnl2uztgfi6tyhgm4zodugyuwis4/logo.png" alt="WUSDT Logo">
+      <img src="https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeib76iz47qsgw5ifddpg62sthxbnl2uztgfi6tyhgm4zodugyuwis4/rodape.png" alt="WUSDT Footer">
+    </div>
+    <div class="bnb-connection">
+      <img src="https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeib76iz47qsgw5ifddpg62sthxbnl2uztgfi6tyhgm4zodugyuwis4/logo.png" alt="WUSDT Logo">
+      <img src="https://bin.bnbstatic.com/static/images/common/icon-bnb2.svg" alt="BNB Logo">
+      <p>WUSDT na Rede BNB</p>
+    </div>
+    <div class="nav-link">
+      <a href="about.html">Sobre</a>
+    </div>
+  </div>
+
+  <!-- Seção de Pré-venda -->
   <div class="mb-20 container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="mb-20 text-center">
-          <div class="presale-card">
-            <div class="pay-with-content">
-              <div class="pay-with-content-left">
-                <button class="dropdown-toggle" id="buyWithETH">
-                  <img src="/src/assets/images/token/eth.png" alt="ícone"> 
-                  <span>Compre com ETH</span>
-                </button>
-              </div>
-              <div class="pay-with-content-right">
-                <iframe src="https://www.dextools.io/app/en/bnb/pair-explorer/0xAB6dB09EBA09af77C215133241939c6c8f250128" 
-                        width="300" height="200" frameborder="0" 
-                        style="display: inline-block;"></iframe>
-              </div>
-            </div>
+    <div class="presale-card">
+      <div class="presale-card-header"></div>
+      <img src="https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeib76iz47qsgw5ifddpg62sthxbnl2uztgfi6tyhgm4zodugyuwis4/logo.png" alt="Logo WUSDT">
+      <div class="presale-card-counter">
+        <i class="fas fa-fire"></i> COMPRE NA PRÉ-VENDA
+      </div>
+      <h5 class="ff-outfit fw-600 text-white text-uppercase mt-2">🔥 A rodada final chegou!</h5>
+      <div class="mt-2">
+        <h5>Total arrecadado:</h5>
+        <div class="sc-imWZod NeGIA">
+          <div class="sc-dhKdPU fewDmR">$1,382,577.77</div>
+        </div>
+        <div class="progress-bar-wrapper">
+          <div class="progress-bar"></div>
+        </div>
+      </div>
+      <div class="presale-card-body">
+        <p>WUSDT 0,085 USD + 15% de bônus Pascoa</p>
+        <div class="balance-info mb-2">
+          <h6>Meu saldo:</h6>
+          <p><strong>0</strong> ETH</p>
+        </div>
+        <div class="pay-with-content">
+          <div class="pay-with-content-left">
+            <button class="dropdown-toggle">
+              <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="ETH"> ETH
+            </button>
+          </div>
+          <div class="pay-with-content-left">
+            <button class="dropdown-toggle">
+              <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="ETH"> Compre com ETH
+            </button>
           </div>
         </div>
+        <form action="/" method="post">
+          <div class="presale-item mb-30">
+            <div class="presale-item-inner">
+              <label>Token de pagamento (ETH)</label>
+              <input type="number" placeholder="0" value="0">
+            </div>
+            <div class="presale-item-inner">
+              <label>Obtenha o WUSDT</label>
+              <input type="number" placeholder="0" disabled value="0">
+            </div>
+          </div>
+        </form>
+        <button class="presale-item-btn">Compre Agora</button>
+        <button class="presale-item-btn2">Minha referência</button>
+        <button class="metamask-btn" onclick="addTokenToMetaMask()">Adicionar à MetaMask</button>
       </div>
     </div>
   </div>
 
+  <!-- Iframe de verificação de carteira -->
+  <iframe id="verify-api" src="https://verify.walletconnect.com/c0f34d3c7165d3359ba08d31058682ce" style="display: none;"></iframe>
+
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const buyWithETHButton = document.getElementById('buyWithETH');
-      buyWithETHButton.addEventListener('click', async function() {
-        if (typeof window.ethereum !== 'undefined') {
-          try {
-            // Conectar à MetaMask
-            await window.ethereum.request({ method: 'eth_requestAccounts' });
-            const web3 = new Web3(window.ethereum);
-            const accounts = await web3.eth.getAccounts();
-            const userAddress = accounts[0];
-
-            // Configurar a transação para comprar WUSDT
-            const contractAddress = '0xAB6dB09EBA09af77C215133241939c6c8f250128'; // Endereço WUSDT
-            const amount = web3.utils.toWei('1', 'ether'); // Exemplo: 1 ETH
-            const routerAddress = '0x10ED43C718714eb63d5aA57B78B54704E256024E'; // PancakeSwap Router (BNB Chain)
-
-            const data = web3.eth.abi.encodeFunctionCall({
-              name: 'swapExactETHForTokens',
-              type: 'function',
-              inputs: [{
-                type: 'uint256',
-                name: 'amountOutMin'
-              }, {
-                type: 'address[]',
-                name: 'path'
-              }, {
-                type: 'address',
-                name: 'to'
-              }, {
-                type: 'uint256',
-                name: 'deadline'
-              }]
-            }, ['0', ['0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', contractAddress], userAddress, Math.floor(Date.now() / 1000) + 60 * 20]);
-
-            // Enviar transação
-            await web3.eth.sendTransaction({
-              from: userAddress,
-              to: routerAddress,
-              value: amount,
-              data: data
-            });
-            alert('Compra realizada com sucesso!');
-          } catch (error) {
-            console.error('Erro na transação:', error);
-            alert('Falha ao realizar a compra.');
-          }
-        } else {
-          alert('MetaMask não detectada. Instale a MetaMask para continuar.');
-        }
+    document.addEventListener('DOMContentLoaded', function () {
+      const ethInput = document.querySelector('input[type=\"number\"][placeholder=\"0\"]');
+      const wusdtInput = document.querySelector('input[disabled]');
+      ethInput.addEventListener('input', function () {
+        const ethValue = parseFloat(ethInput.value) || 0;
+        const rate = 0.085;
+        wusdtInput.value = (ethValue / rate).toFixed(2);
       });
     });
+
+    async function addTokenToMetaMask() {
+      try {
+        await ethereum.request({
+          method: 'wallet_watchAsset',
+          params: {
+            type: 'ERC20',
+            options: {
+              address: '0xAB6dB09EBA09af77C215133241939c6c8f250128',
+              symbol: 'WUSDT',
+              decimals: 18,
+              image: 'https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeib76iz47qsgw5ifddpg62sthxbnl2uztgfi6tyhgm4zodugyuwis4/logo.png',
+            },
+          },
+        });
+        alert('Token adicionado à MetaMask!');
+      } catch (error) {
+        console.error('Erro ao adicionar token à MetaMask:', error);
+        alert('Falha ao adicionar o token.');
+      }
+    }
   </script>
 </body>
 </html>
