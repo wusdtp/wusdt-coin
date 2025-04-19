@@ -1,3 +1,39 @@
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const bnbInput = document.querySelector('input[type="number"][placeholder="0"]');
+    const wusdtOutput = document.querySelector('input[disabled]');
+    bnbInput.addEventListener('input', function () {
+      const bnbValue = parseFloat(bnbInput.value) || 0;
+      const rate = 300; // 1 BNB = 300 WUSDT (exemplo)
+      wusdtOutput.value = (bnbValue * rate).toFixed(2);
+    });
+  });
+
+  async function addTokenToMetaMask() {
+    try {
+      await ethereum.request({
+        method: 'wallet_watchAsset',
+        params: {
+          type: 'ERC20',
+          options: {
+            address: '0xAB6dB09EBA09af77C215133241939c6c8f250128',
+            symbol: 'WUSDT',
+            decimals: 18,
+            image: 'https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeib76iz47qsgw5ifddpg62sthxbnl2uztgfi6tyhgm4zodugyuwis4/logo.png',
+          },
+        },
+      });
+      alert('Token adicionado à MetaMask!');
+    } catch (error) {
+      console.error('Erro ao adicionar token à MetaMask:', error);
+      alert('Falha ao adicionar o token.');
+    }
+  }
+</script>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
