@@ -4,9 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WUSDT - Pré-venda</title>
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" sizes="192x192" href="logo-192.png">
-  <meta name="theme-color" content="#0f1624">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
@@ -113,8 +110,7 @@
     }
     .presale-item-btn,
     .presale-item-btn2,
-    .metamask-btn,
-    .trust-btn {
+    .metamask-btn {
       background-color: #f5a623;
       color: black;
       border: none;
@@ -136,14 +132,9 @@
       background-color: #ff5722;
       color: white;
     }
-    .trust-btn {
-      background-color: #1dc1f8;
-      color: black;
-    }
     .presale-item-btn:hover,
     .presale-item-btn2:hover,
-    .metamask-btn:hover,
-    .trust-btn:hover {
+    .metamask-btn:hover {
       transform: scale(1.05);
     }
     @media (max-width: 600px) {
@@ -156,14 +147,210 @@
       }
     }
   </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-images">
+      <img src="https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeibv36dhcyqirmaz6gqqketbuyyulcpsag7xdrtzlioq2qnwebuwgm" alt="WUSDT Logo" />
+    </div>
+    <div class="nav-link">
+      <a href="#sobre">Sobre</a>
+    </div>
+  </div>
+
+  
+<div class="container text-center mb-10">
+  <h3 class="text-xl font-bold mb-2">Valor de Mercado Atual</h3>
+  <p class="text-lg">BNB: <span id="bnbPrice">...</span> USD</p>
+  <p class="text-lg">WUSDT: <span id="wusdtPrice">0.085</span> USD (fixo)</p>
+</div>
+
+<div class="container">
+    <div class="presale-card">
+      <div class="presale-card-header"></div>
+      <div class="presale-card-counter">
+        <i class="fas fa-fire"></i> COMPRE NA PRÉ-VENDA
+      </div>
+      <h5 class="text-uppercase mt-2">🔥 A rodada final chegou!</h5>
+      <h5>Total arrecadado:</h5>
+      <div class="sc-dhKdPU">$1,382,577.77</div>
+      <div class="progress-bar-wrapper"><div class="progress-bar"></div></div>
+      <p class="mt-2">WUSDT 0,085 USD + 15% de bônus de Páscoa</p>
+      <div class="pay-with-content">
+        <button class="dropdown-toggle">
+          <img src="https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafkreia45loqirzvazb52cbicifto2h7vur4qv6t4et2ombbpi5bua63zq" alt="BNB"> Compre com BNB
+        </button>
+      </div>
+      <form>
+        <div class="presale-item-inner">
+          <label>Token de pagamento (BNB)</label>
+          <input id="bnbInput" type="number" placeholder="0" />
+        </div>
+        <div class="presale-item-inner">
+          <label><img src="https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeibv36dhcyqirmaz6gqqketbuyyulcpsag7xdrtzlioq2qnwebuwgm" alt="WUSDT Logo" style="width:24px;height:24px;display:inline-block;margin-right:8px;vertical-align:middle;">Você receberá (WUSDT)</label>
+          <input id="wusdtOutput" type="number" disabled placeholder="0" />
+        </div>
+      </form>
+      <a class="presale-item-btn" href="https://pancakeswap.finance/swap?outputCurrency=0xAB6dB09EBA09af77C215133241939c6c8f250128" target="_blank">Compre Agora</a>
+      <button class="metamask-btn" onclick="addTokenToMetaMask()">Adicionar à MetaMask</button>
+    </div>
+  </div>
+
+  
+    <div class="text-center mt-10">
+      <h3 class="text-xl font-bold mb-4"></h3>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="https://bscscan.com/token/0xAB6dB09EBA09af77C215133241939c6c8f250128" target="_blank"><i class="fas fa-search mr-2"></i> </a>
+        <a href="https://poocoin.app/tokens/0xAB6dB09EBA09af77C215133241939c6c8f250128" target="_blank"><i class="fas fa-chart-line mr-2"></i> </a>
+        <a href="https://web.telegram.org/k/#@wusdti" target="_blank"><i class="fab fa-telegram mr-2"></i> </a>
+        <a href="https://x.com/" target="_blank"><i class="fab fa-x-twitter mr-2"></i> </a>
+      </div>
+    </div>
+
+    
+<div class="text-center mt-10">
+  <h3 class="text-xl font-bold mb-4">Siga a WUSDT</h3>
+  <div class="flex flex-wrap justify-center gap-4">
+    <a href="https://bscscan.com/token/0xAB6dB09EBA09af77C215133241939c6c8f250128" target="_blank" class="bg-yellow-500 text-black px-5 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-yellow-600 transition">
+      <i class="fas fa-search"></i> BscScan
+    </a>
+    <a href="https://poocoin.app/tokens/0xAB6dB09EBA09af77C215133241939c6c8f250128" target="_blank" class="bg-green-500 text-white px-5 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-green-600 transition">
+      <i class="fas fa-chart-line"></i> Poocoin
+    </a>
+    <a href="https://web.telegram.org/k/#@wusdti" target="_blank" class="bg-blue-500 text-white px-5 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-blue-600 transition">
+      <i class="fab fa-telegram-plane"></i> Telegram
+    </a>
+    <a href="https://x.com/" target="_blank" class="bg-black text-white px-5 py-3 rounded-full font-bold flex items-center gap-2 hover:bg-gray-800 transition">
+      <i class="fab fa-x-twitter"></i> X (Twitter)
+    </a>
+  </div>
+</div>
+
+
+<section id="sobre" class="container mt-20">
+
+    <h2 class="text-2xl font-bold mb-4">WUSDT: Lastro de Investimento e Liquidez na Rede BNB</h2>
+<p>
+  A <strong>WUSDT</strong> é uma criptomoeda revolucionária desenvolvida na <strong>Binance Smart Chain (BSC)</strong>, com o propósito de transformar o acesso a soluções financeiras seguras, estáveis e transparentes. Registrada no BscScan sob o contrato <strong>0xAB6dB09EBA09af77C215133241939c6c8f250128</strong>, a WUSDT foi projetada para unir tecnologia de ponta com segurança institucional.
+</p>
+
+<p class="mt-4">
+  Nosso projeto é sustentado por um <strong>lastro de investimento sólido</strong>, estruturado a partir de reservas estratégicas e parcerias com instituições financeiras e líderes do mercado global. Esse ecossistema de suporte proporciona à WUSDT um diferencial competitivo em liquidez, estabilidade e escalabilidade — mesmo em cenários de volatilidade extrema.
+</p>
+
+<p class="mt-4">
+  Lançada com a missão de democratizar o acesso às finanças descentralizadas (<strong>DeFi</strong>), a WUSDT oferece um modelo acessível tanto para investidores iniciantes quanto para grandes players institucionais. Seus fundamentos técnicos, aliados a uma governança clara e transparente, fazem da WUSDT uma moeda digital moderna, segura e alinhada às demandas do mercado internacional.
+</p>
+
+<p class="mt-4">
+  Nossa visão é construir um futuro financeiro mais justo, descentralizado e inclusivo. Por isso, estamos em constante desenvolvimento e buscamos integrar a WUSDT a novas redes e protocolos, oferecendo interoperabilidade e maior acessibilidade aos nossos usuários. A cada fase do projeto, reafirmamos nosso compromisso com inovação, confiabilidade e crescimento sustentável.
+</p>
+
+<p class="mt-4">
+  Com todas as transações verificáveis publicamente, auditorias constantes e um código auditado, a WUSDT proporciona a <strong>confiança que o investidor moderno exige</strong>. Mais do que uma criptomoeda, a WUSDT é um projeto em expansão que representa uma oportunidade única de fazer parte da nova era do dinheiro digital.
+</p>
+
+<p class="mt-4 font-semibold text-yellow-400">
+  Junte-se à revolução WUSDT e faça parte do futuro das finanças agora mesmo!
+</p>
+
+    
+    <p>
+      A WUSDT é uma criptomoeda inovadora na Binance Smart Chain (BSC), registrada no BscScan com o endereço
+      <strong>0xAB6dB09EBA09af77C215133241939c6c8f250128</strong>. Nosso projeto é sustentado por um lastro de investimento
+      composto por reservas financeiras estratégicas e parcerias com líderes do mercado, garantindo liquidez e estabilidade
+      mesmo em cenários de alta volatilidade.
+    </p>
+    <p class="mt-4">
+      Lançada para democratizar o acesso às finanças descentralizadas, a WUSDT combina tecnologia blockchain de ponta com uma
+      visão de longo prazo para o futuro dos investimentos. Nosso objetivo é expandir globalmente, integrando a WUSDT a novas
+      redes e promovendo um ecossistema financeiro inclusivo.
+    </p>
+    <p class="mt-4">
+      Com transações transparentes e verificáveis, a WUSDT é a escolha ideal para investidores que buscam segurança e inovação.
+      Junte-se à revolução WUSDT hoje!
+    </p>
+    
+  </section>
+
   <script>
-    async function copyContract() {
+    document.addEventListener('DOMContentLoaded', () => {
+      const bnbInput = document.getElementById('bnbInput');
+      const wusdtOutput = document.getElementById('wusdtOutput');
+      const rate = 300;
+      bnbInput.addEventListener('input', () => {
+        const bnb = parseFloat(bnbInput.value) || 0;
+        wusdtOutput.value = (bnb * rate).toFixed(2);
+      });
+    });
+
+    async function addTokenToMetaMask() {
+      if (typeof window.ethereum === 'undefined') {
+        alert('MetaMask não está instalada!');
+        return;
+      }
+
       try {
-        await navigator.clipboard.writeText("0xAB6dB09EBA09af77C215133241939c6c8f250128");
-        alert("Endereço copiado! Abra a Trust Wallet e cole para adicionar o WUSDT.");
-      } catch (err) {
-        alert("Erro ao copiar: " + err);
+        await window.ethereum.request({
+          method: 'wallet_switchEthereumChain',
+          params: [{ chainId: '0x38' }],
+        });
+      } catch (switchError) {
+        if (switchError.code === 4902) {
+          try {
+            await window.ethereum.request({
+              method: 'wallet_addEthereumChain',
+              params: [{
+                chainId: '0x38',
+                chainName: 'BNB Smart Chain',
+                nativeCurrency: { name: 'BNB', symbol: 'BNB', decimals: 18 },
+                rpcUrls: ['https://bsc-dataseed.binance.org/'],
+                blockExplorerUrls: ['https://bscscan.com']
+              }]
+            });
+          } catch (addError) {
+            alert('Erro ao adicionar a rede BSC: ' + addError.message);
+            return;
+          }
+        } else {
+          alert('Erro ao trocar de rede: ' + switchError.message);
+          return;
+        }
+      }
+
+      try {
+        const wasAdded = await window.ethereum.request({
+          method: 'wallet_watchAsset',
+          params: {
+            type: 'ERC20',
+            options: {
+              address: '0xAB6dB09EBA09af77C215133241939c6c8f250128',
+              symbol: 'WUSDT',
+              decimals: 18,
+              image: 'https://lavender-quiet-crawdad-359.mypinata.cloud/ipfs/bafybeibv36dhcyqirmaz6gqqketbuyyulcpsag7xdrtzlioq2qnwebuwgm'
+            }
+          }
+        });
+
+        if (wasAdded) {
+          alert('Token WUSDT adicionado com sucesso!');
+        } else {
+          alert('O token não foi adicionado.');
+        }
+      } catch (error) {
+        console.error(error);
+        alert('Erro ao adicionar o token ao MetaMask.');
       }
     }
   </script>
-</head>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Simulação de valor do BNB (mock, pois não há acesso a API)
+    const mockBNBPrice = 550.75;
+    document.getElementById('bnbPrice').innerText = mockBNBPrice.toFixed(2);
+  });
+</script>
+
+</body>
+</html>
